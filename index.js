@@ -5,9 +5,11 @@ import mongoose from "mongoose";
 import cors from "cors";
 import "dotenv/config.js";
 import {
+  forgotPassword,
   handleFetchUser,
   handleLogin,
   handleSignUp,
+  resetPassword,
 } from "./controllers/user.js";
 import { fetchuser } from "./middleware/fetchUser.js";
 import {
@@ -39,12 +41,14 @@ app.post("/api/signup", handleSignUp);
 app.post("/api/cart", fetchuser, addToCart);
 app.post("/api/orders", fetchuser, createOrder);
 app.post("/api/checkout-session", fetchuser, checkoutSession);
+app.post("/api/forgot-password", forgotPassword);
 app.get("/api/me", fetchuser, handleFetchUser);
 app.get("/api/products", getAllProducts);
 app.get("/api/orders", fetchuser, getOrders);
 app.delete("/api/removefromcart/:itemId", fetchuser, removeFromCart);
 app.put("/api/cart/:itemId/increase", fetchuser, increaseItemQuantity);
 app.put("/api/cart/:itemId/decrease", fetchuser, decreaseItemQuantity);
+app.put("/api/reset-password/:token", resetPassword);
 app.get("/api/cart", fetchuser, getCartItems);
 
 app.listen(port, error => {

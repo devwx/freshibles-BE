@@ -1,7 +1,7 @@
 const products = [
   {
     name: "Spinach",
-    discription: "Freshly sourced Spinach",
+    description: "Freshly sourced Spinach",
     category: "vegetable",
     image:
       "https://res.cloudinary.com/pauloski/image/upload/v1714940798/francis-store/vegetable/edmcvqvdvdi2s1fuco0b.jpg",
