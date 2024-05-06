@@ -19,6 +19,7 @@ import {
   removeFromCart,
 } from "./controllers/product.js";
 import { createOrder, getOrders } from "./controllers/order.js";
+import { checkoutSession } from "./controllers/checkout.js";
 
 // import Stripe from "stripe";
 // const stripe = Stripe(`${process.env.STRIPE_SECRET_KEY}`);
@@ -37,6 +38,7 @@ app.post("/api/login", handleLogin);
 app.post("/api/signup", handleSignUp);
 app.post("/api/cart", fetchuser, addToCart);
 app.post("/api/orders", fetchuser, createOrder);
+app.post("/api/checkout-session", fetchuser, checkoutSession);
 app.get("/api/me", fetchuser, handleFetchUser);
 app.get("/api/products", getAllProducts);
 app.get("/api/orders", fetchuser, getOrders);
