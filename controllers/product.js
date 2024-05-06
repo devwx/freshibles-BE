@@ -34,6 +34,7 @@ export const addToCart = async (req, res) => {
         product: product._id,
         quantity: 1,
         name: product.name,
+        description: product.description,
         image: product.image,
         category: product.category,
         new_price: product.new_price,
